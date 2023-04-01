@@ -1,0 +1,102 @@
+/* ==UserStyle==
+@name CodePen Omni
+@version 0.1
+@description 🧛🏻‍♂️ Dark theme for CodePen
+@author filipelperes
+@namespace https://github.com/filipelperes
+
+@homepageURL https://github.com/filipelperes/omni-codepen
+@supportURL https://github.com/filipelperes/omni-codepen/issues
+@updateURL https://github.com/filipelperes/omni-codepen/raw/main/codepen.user.css
+
+@preprocessor stylus
+@var checkbox orange-spec-words "Use orange color for reserved words" 1
+==/UserStyle== */
+@-moz-document domain("codepen.io")
+
+    _background = #191622
+    current-line = #44475a
+    foreground = #E1E1E6
+    comment = #483C67
+    _cyan = #78D1E1
+    _green = #67E480
+    _orange = #E89E64
+    _pink = #ff79c6
+    _purple = #988BC7
+    _red = #E96379
+    _yellow = #E7DE79
+
+
+    // html
+    #box-html
+
+        .cm-bracket
+            color foreground
+
+        .cm-attribute
+            color _green
+
+        .cm-meta
+            color current-line
+
+    // css
+    #box-css
+    #box-html
+
+        .cm-variable-2
+            color foreground
+
+
+        .cm-qualifier
+        .cm-variable-3
+            color _green
+
+
+        .cm-property,
+        .cm-variable
+            color _cyan
+
+
+        .cm-atom
+            if orange-spec-words
+                color _orange
+            else
+                color _purple
+
+    // js
+    #box-js
+    #box-html
+
+        .cm-keyword
+        .cm-operator
+            color _pink
+
+        .cm-property
+            color foreground
+
+        .cm-variable-2
+            color _orange
+
+        .cm-atom
+            color _purple
+
+        .cm-def
+            color _cyan
+
+    // general
+    [id|="box"]
+
+        [role="presentation"]
+            color foreground
+
+        .cm-tag
+            color _pink
+
+        .cm-comment
+            color comment
+
+        .cm-string
+            color _yellow
+
+        .cm-number
+            color _purple
